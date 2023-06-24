@@ -6,8 +6,8 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-#define SERVER_IP "46.214.239.71"
-#define SERVER_PORT 8000
+#define SERVER_IP "127.0.0.1" // Replace with server IP
+#define SERVER_PORT 8000 // Replace with server port
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_org_ducky_ledclient_MainActivity_stringFromJNI(
