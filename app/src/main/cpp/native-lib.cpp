@@ -16,7 +16,7 @@ Java_org_ducky_ledclient_MainActivity_stringFromJNI(
     int client_socket;
     struct sockaddr_in server_address;
     char message[5] = "test";
-    char server_response[1024];
+    char server_response[128];
 
     // Create a socket
     client_socket = socket(AF_INET, SOCK_STREAM, 0);
@@ -50,7 +50,6 @@ Java_org_ducky_ledclient_MainActivity_stringFromJNI(
         perror("Response receiving failed");
         return env->NewStringUTF("Well I sent the message but didn't get a reply, so it's anybody's guess whether the LED flashed or not");
     }
-    printf("Server response: %s\n", server_response);
     // Close the socket
     close(client_socket);
 
